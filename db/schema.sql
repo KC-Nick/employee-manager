@@ -1,4 +1,5 @@
 DROP DATABASE IF EXISTS employee_db;
+-- delete ^ after finished with project before turning in
 CREATE DATABASE employee_db;
 
 USE employee_db;
@@ -8,7 +9,7 @@ CREATE TABLE department (
   first_name VARCHAR(30) NOT NULL
 );
 
-CREATE TABLE role (
+CREATE TABLE roles (
     id INT PRIMARY KEY,
     title VARCHAR(30) NOT NULL,
     salary DECIMAL,
