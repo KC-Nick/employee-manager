@@ -1,11 +1,11 @@
 INSERT INTO department (id, first_name)
-VALUES (1, "electronics"),
-       (2, "grocery"),
-       (3, "automotive"),
-       (4, "frozen");
+VALUES (NULL, "electronics"),
+       (NULL, "grocery"),
+       (NULL, "automotive"),
+       (NULL, "frozen");
 
 INSERT INTO roles (id, title, salary, department_id)
-VALUES (5, "shift manager", "$42,000", 2);
+VALUES (NULL, "shift manager", "42000", 1);
 
-INSERT INTO employee (id, first_name, last_name, role_id, manager_id)
-VALUES (6, "josh", "mitchum", 5, null);
+INSERT INTO employee (id, first_name, last_name, role_id)
+VALUES (NULL, "josh", "mitchum", 2);

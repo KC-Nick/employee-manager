@@ -33,7 +33,7 @@ db.query('SELECT * FROM employee', function (err, results) {
     console.log(results);
   });
 // Default response for any other request (Not Found)
-app.use((req, res) => {
+app.use('error', (req, res) => {
   res.status(404).end();
 });
 
