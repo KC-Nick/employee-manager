@@ -1,11 +1,17 @@
-INSERT INTO department (id, first_name)
-VALUES (NULL, "electronics"),
-       (NULL, "grocery"),
-       (NULL, "automotive"),
-       (NULL, "frozen");
+INSERT INTO department (department_name)
+VALUES ("electronics"),
+       ("grocery"),
+       ("automotive"),
+       ("frozen");
 
-INSERT INTO roles (id, title, salary, department_id)
-VALUES (NULL, "shift manager", "42000", 1);
+INSERT INTO roles (title, salary)
+VALUES ("shift manager", "42000"),
+       ("associate", "33000"),
+       ("associate", "33000"),
+       ("associate", "33000");
 
-INSERT INTO employee (id, first_name, last_name, role_id)
-VALUES (NULL, "josh", "mitchum", 2);
+INSERT INTO employee (first_name, last_name, manager_id)
+VALUES ("josh", "mitchum", null),
+       ("jessica", "maryam", null),
+       ("heath", "carrison", 1),
+       ("rosalind", "rosemary", 1);

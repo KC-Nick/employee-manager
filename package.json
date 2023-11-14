@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/KC-Nick/employee-manager#readme",
   "dependencies": {
-    "inquirer": "^9.2.11",
+    "inquirer": "^8.2.4",
     "jest": "^29.7.0",
     "mysql2": "^3.6.3"
   }

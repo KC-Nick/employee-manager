@@ -1,42 +1,79 @@
-const express = require('express');
 // Import and require mysql2
 const mysql = require('mysql2');
 
-const PORT = process.env.PORT || 3001;
-const app = express();
-
-// Express middleware
-app.use(express.urlencoded({ extended: false }));
-app.use(express.json());
-
 // Connect to database
 const db = mysql.createConnection(
-  {
-    host: '127.0.0.1',
-    // MySQL username,
-    user: 'root',
-    // MySQL password
-    password: '',
-    database: 'employee_db'
-  },
-  console.log(`Connected to the employee_db database.`)
+    {
+        host: '127.0.0.1',
+        // MySQL username,
+        user: 'root',
+        // MySQL password
+        password: 'hyujin2424$!',
+        database: 'employee_db'
+    },
+    console.log(`Connected to the employee_db database.`)
 );
+// app.delete('USE employee_db;', (req, res) => {
+//     const sql = `DELETE FROM department WHERE id = ?`;
+//     const params = [req.params.id];
+    
+//     db.query(sql, params, (err, result) => {
+//       if (err) {
+//         res.statusMessage(400).json({ error: res.message });
+//       } else if (!result.affectedRows) {
+//         res.json({
+//         message: 'Department not found'
+//         });
+//       } else {
+//         res.json({
+//           message: 'deleted',
+//           changes: result.affectedRows,
+//           id: req.params.id
+//         });
+//       }
+//     });
+//   });
 
-// Query database
-db.query('SELECT * FROM department', function (err, results) {
-  console.log(results);
-});
-db.query('SELECT * FROM role', function (err, results) {
-    console.log(results);
-  });
-db.query('SELECT * FROM employee', function (err, results) {
-    console.log(results);
-  });
-// Default response for any other request (Not Found)
-app.use('error', (req, res) => {
-  res.status(404).end();
-});
+//   app.delete('USE employee_db;', (req, res) => {
+//     const sql = `DELETE FROM roles WHERE id = ?`;
+//     const params = [req.params.id];
+    
+//     db.query(sql, params, (err, result) => {
+//       if (err) {
+//         res.statusMessage(400).json({ error: res.message });
+//       } else if (!result.affectedRows) {
+//         res.json({
+//         message: 'Role not found'
+//         });
+//       } else {
+//         res.json({
+//           message: 'deleted',
+//           changes: result.affectedRows,
+//           id: req.params.id
+//         });
+//       }
+//     });
+//   });
 
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+//   app.delete('USE employee_db;', (req, res) => {
+//     const sql = `DELETE FROM employee WHERE id = ?`;
+//     const params = [req.params.id];
+    
+//     db.query(sql, params, (err, result) => {
+//       if (err) {
+//         res.statusMessage(400).json({ error: res.message });
+//       } else if (!result.affectedRows) {
+//         res.json({
+//         message: 'Employee not found'
+//         });
+//       } else {
+//         res.json({
+//           message: 'deleted',
+//           changes: result.affectedRows,
+//           id: req.params.id
+//         });
+//       }
+//     });
+//   });
+
+module.exports = db;
