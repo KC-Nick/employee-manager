@@ -1,3 +1,4 @@
+[employee database.webm](https://github.com/KC-Nick/employee-manager/assets/139719585/bd1381f1-713f-4a45-8ca4-6478f6cdb409)
 # Employee Manager
 
 ## Description
